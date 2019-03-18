@@ -1,10 +1,10 @@
 {
-  "name": "funnydrew-games-new",
+  "name": "fd-games-new",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "bin": {
-    "brain-games": "/dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
@@ -13,7 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
-
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +20,6 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.3.4"    
+    "@babel/preset-env": "^7.3.4"
   }
 }
