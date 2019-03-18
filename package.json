@@ -1,13 +1,19 @@
 {
-  "name": "braingames",
+  "name": "funnydrew-games-new",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "bin": {
-    "brain-games": "/src/bin/brian-games.js"
+    "brain-games": "/dist/bin/brain-games.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+
   },
   "author": "",
   "license": "ISC",
