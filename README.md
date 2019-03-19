@@ -2,3 +2,6 @@
 
 <a href="https://travis-ci.com/FunnyDrew/project-lvl1-s462.svg?branch=master"><img
 src="https://api.travis-ci.com/FunnyDrew/project-lvl1-s462.svg?branch=master" /></a>
+
+## HOW TO INSTALL and PLAY
+[![asciicast](https://asciinema.org/a/jhAViKYR6GsXA5Wl3WCqqA1qm.svg)](https://asciinema.org/a/jhAViKYR6GsXA5Wl3WCqqA1qm)
