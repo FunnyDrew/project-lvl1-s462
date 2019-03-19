@@ -20,9 +20,8 @@ const game = (counter) => {
   const num = Math.round(1000 * Math.random());
   const isEven = (num % 2 === 0) ? 'yes' : 'no';
 
-  console.log(`Question: ${num}`);    
-  const answer = readlineSync.question('Your answer: '); 
-
+  console.log(`Question: ${num}`);
+  const answer = readlineSync.question('Your answer: ');
   if (answer === isEven) {
     console.log('Correct!');
     return game(counter + 1);
