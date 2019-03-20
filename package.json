@@ -1,11 +1,12 @@
 {
   "name": "fd-games-new",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "educational project Hexlet - console brain-games",
   "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"

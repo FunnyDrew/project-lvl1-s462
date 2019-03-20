@@ -1,7 +1,10 @@
 <a href="https://codeclimate.com/github/FunnyDrew/project-lvl1-s462/maintainability"><img src="https://api.codeclimate.com/v1/badges/f87db514e3f199c3ef47/maintainability" /></a>
 
-<a href="https://travis-ci.org/FunnyDrew/project-lvl1-s462"><img
+<a href="https://travis-ci.org/FunnyDrew/project-lvl1-s462.svg?branch=master"><img
 src="https://api.travis-ci.com/FunnyDrew/project-lvl1-s462.svg?branch=master" /></a>
 
-## HOW TO INSTALL and PLAY
+## HOW TO INSTALL and PLAY Brain-even game
 [![asciicast](https://asciinema.org/a/jhAViKYR6GsXA5Wl3WCqqA1qm.svg)](https://asciinema.org/a/jhAViKYR6GsXA5Wl3WCqqA1qm)
+
+## HOW TO INSTALL and PLAY Brain-calc game
+[![asciicast](https://asciinema.org/a/IeadlKOpLejMcgIwONaRWVAPy.svg)](https://asciinema.org/a/IeadlKOpLejMcgIwONaRWVAPy)
