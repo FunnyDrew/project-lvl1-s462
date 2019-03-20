@@ -1,28 +1,44 @@
 import randomNumGeneration from '../utils';
 
-export const gameRules = () => 'What is the result of the expression?';
-
+const operatorsInGameUsed = 3;
 
 const operationGenerate = () => {
-  const randomNum = Math.random();
-  if (randomNum < 0.3) {
-    return '-';
+  const operatorOptionChoice = randomNumGeneration(operatorsInGameUsed - 1);
+  let operator;
+  switch (operatorOptionChoice) {
+    case 0:
+      operator = '+';
+      break;
+    case 1:
+      operator = '-';
+      break;
+    case 2:
+      operator = '*';
+      break;
+    default: operator = '+';
   }
-  if (randomNum >= 0.3 && randomNum < 0.75) {
-    return '+';
-  }
-  return '*';
+  return operator;
 };
 
-const calculate = (operation, num1, num2) => {
-  if (operation === '-') {
-    return num1 - num2;
+const calculate = (operator, num1, num2) => {
+  let result;
+  switch (operator) {
+    case '-':
+      result = num1 - num2;
+      break;
+    case '+':
+      result = num1 + num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    default:
   }
-  if (operation === '+') {
-    return num1 + num2;
-  }
-  return num1 * num2;
+  return result;
 };
+
+
+export const gameRules = () => 'What is the result of the expression?';
 
 export const gameTaskGeneration = () => {
   const maxNumberInGame = 50;
@@ -32,6 +48,8 @@ export const gameTaskGeneration = () => {
   return `${randomNumber1} ${operation} ${randomNumber2}`;
 };
 
-export const getGameAnswer = str => eval(str);
-
-const correctAnswer = calculate(operation, randomNumber1, randomNumber2);
+export const getGameAnswer = (str) => {
+  const splitedString = str.split(' ');
+  const result = calculate(splitedString[1], Number(splitedString[0]), Number(splitedString[2]));
+  return `${result}`;
+};

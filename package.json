@@ -1,6 +1,6 @@
 {
   "name": "fd-games-new",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "educational project Hexlet - console brain-games",
   "main": "",
   "bin": {
