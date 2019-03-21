@@ -1,4 +1,5 @@
-import askQuestion from '..';
+import qureyToPlayer from '..';
+
 
 
 export default (gameRules, taskFunction, getGameAnswer) => {
