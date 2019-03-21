@@ -1,43 +1,34 @@
-import qureyToPlayer from '..';
+import queryToPlayer from '..';
 
+const maxGameIteration = 3;
 
+const game = (description, makeQuestion, getCorrectAnswer) => {
+  console.log('\nWelcome to the Brain Games!');
+  console.log(description);
 
-export default (gameRules, taskFunction, getGameAnswer) => {
-  const generalGreetings = '\nWelcome to the Brain Games!';
-  console.log(generalGreetings);
+  const playerName = queryToPlayer('May I have your name?');
+  console.log(`Hello, ${playerName}!\n`);
 
-  console.log(gameRules());
-
-  const nameQuery = 'May I have your name?';
-  const player = askQuestion(nameQuery);
-
-  const presonalGreetings = `Hello, ${player}!\n`;
-  console.log(presonalGreetings);
-
-  const startIterationNumber = 0;
-  const maxGameIteration = 3;
-
-  const game = (numIteration) => {
-    if (numIteration === maxGameIteration) {
-      return (`Congratulations, ${player}!`);
+  const iter = (counter) => {
+    if (counter === maxGameIteration) {
+      return (`Congratulations, ${playerName}!\n`);
     }
 
-    const gameTest = taskFunction();
+    const question = makeQuestion();
+    console.log(`Question: ${question}`);
 
-    console.log(`Question: ${gameTest}`);
+    const playerResponse = queryToPlayer('Your answer: ');
 
-    const playerAnswer = askQuestion('Your answer: ');
+    const correctAnswer = getCorrectAnswer(question);
 
-    const correctAnswer = getGameAnswer(gameTest);
-
-    if (playerAnswer !== correctAnswer) {
-      const wrongEnd = `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;
-      return `${wrongEnd}\nLet's try again, ${player}!`;
+    if (playerResponse !== String(correctAnswer)) {
+      const wrongEnd = `'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`;
+      return `${wrongEnd}\nLet's try again, ${playerName}!\n`;
     }
-
     console.log('Correct!');
-    return game(numIteration + 1);
+    return iter(counter + 1);
   };
-
-  return game(startIterationNumber);
+  console.log(iter(0));
 };
+
+export default game;
