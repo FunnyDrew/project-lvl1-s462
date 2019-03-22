@@ -14,9 +14,12 @@ const game = (description, makeGameData) => {
   const playerName = queryToPlayer('May I have your name?');
   console.log(`Hello, ${playerName}!\n`);
 
-  const iter = (counter) => {
+  let counter = 0;
+
+  while (counter <= maxGameIteration) {
     if (counter === maxGameIteration) {
-      return (`Congratulations, ${playerName}!\n`);
+      console.log(`Congratulations, ${playerName}!\n`);
+      return;
     }
 
     const getGameData = makeGameData();
@@ -27,14 +30,29 @@ const game = (description, makeGameData) => {
 
     const correctAnswer = getGameData[1];
 
+    /* Так попробовал - не работает
+    [question, correctAnswer] = makeGameData();
+
+    console.log(`Question: ${question}`);
+    const playerResponse = queryToPlayer('Your answer: ');
+    */
+
+    /* Работает так, но чем это лучше?
+    let question = '';
+    let correctAnswer = '';
+    [question, correctAnswer] = makeGameData();
+
+    console.log(`Question: ${question}`);
+    const playerResponse = queryToPlayer('Your answer: '); */
+
     if (playerResponse !== String(correctAnswer)) {
       console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      return `Let's try again, ${playerName}!\n`;
+      console.log(`Let's try again, ${playerName}!\n`);
+      return;
     }
     console.log('Correct!');
-    return iter(counter + 1);
-  };
-  console.log(iter(0));
+    counter += 1;
+  }
 };
 
 export default game;

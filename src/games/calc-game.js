@@ -1,10 +1,10 @@
-import randomCalc from '../utils';
+import { randomCalc } from '../utils';
 import game from '..';
 
 const gameDescription = 'What is the result of the expression?\n';
 
-const maxNumInGame = 40;
-const operatorArray = ['+', '-', '*'];
+const maximumValue = 40;
+const operators = ['+', '-', '*'];
 
 const calculate = (operator, num1, num2) => {
   let result;
@@ -24,12 +24,12 @@ const calculate = (operator, num1, num2) => {
 };
 
 const makeGameData = () => {
-  const expressionNum1 = randomCalc(1, maxNumInGame);
-  const experssionNum2 = randomCalc(1, maxNumInGame);
-  const expresstionOperator = operatorArray[randomCalc(0, operatorArray.length - 1)];
-  const questionData = `${expressionNum1} ${expresstionOperator} ${experssionNum2}`;
-  const answerData = calculate(expresstionOperator, expressionNum1, experssionNum2);
-  return [questionData, answerData];
+  const firstNumericElement = randomCalc(1, maximumValue);
+  const secondNumericElement = randomCalc(1, maximumValue);
+  const expresstionOperator = operators[randomCalc(0, operators.length - 1)];
+  const question = `${firstNumericElement} ${expresstionOperator} ${secondNumericElement}`;
+  const answer = calculate(expresstionOperator, firstNumericElement, secondNumericElement);
+  return [question, answer];
 };
 
 export default () => game(gameDescription, makeGameData);
