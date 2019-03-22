@@ -1,5 +1,5 @@
 import randomCalc from '../utils';
-import game from './game-engine';
+import game from '..';
 
 const gameDescription = 'What is the result of the expression?\n';
 
@@ -23,13 +23,13 @@ const calculate = (operator, num1, num2) => {
   return result;
 };
 
-const getTask = () => `${randomCalc(1, maxNumInGame)} ${operatorArray[randomCalc(0, 2)]} ${randomCalc(1, maxNumInGame)}`;
-
-
-const getCorrectAnswer = (str) => {
-  const splitedString = str.split(' ');
-  const result = calculate(splitedString[1], Number(splitedString[0]), Number(splitedString[2]));
-  return `${result}`;
+const makeGameData = () => {
+  const expressionNum1 = randomCalc(1, maxNumInGame);
+  const experssionNum2 = randomCalc(1, maxNumInGame);
+  const expresstionOperator = operatorArray[randomCalc(0, operatorArray.length - 1)];
+  const questionData = `${expressionNum1} ${expresstionOperator} ${experssionNum2}`;
+  const answerData = calculate(expresstionOperator, expressionNum1, experssionNum2);
+  return [questionData, answerData];
 };
 
-export default () => game(gameDescription, getTask, getCorrectAnswer);
+export default () => game(gameDescription, makeGameData);
