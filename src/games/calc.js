@@ -1,34 +1,30 @@
-import { randomCalc } from '../utils';
+import { makeRandom } from '../utils';
 import game from '..';
 
 const gameDescription = 'What is the result of the expression?';
 
 const maximumValue = 40;
-const operators = ['+', '-', '*'];
+const operatorSign = ['+', '-', '*'];
 
 const calculate = (operator, num1, num2) => {
-  let result;
   switch (operator) {
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
+      return '+';
   }
-  return result;
 };
 
 const makeGameData = () => {
-  const firstNumericElement = randomCalc(1, maximumValue);
-  const secondNumericElement = randomCalc(1, maximumValue);
-  const expresstionOperator = operators[randomCalc(0, operators.length - 1)];
-  const question = `${firstNumericElement} ${expresstionOperator} ${secondNumericElement}`;
-  const answer = calculate(expresstionOperator, firstNumericElement, secondNumericElement);
+  const a = makeRandom(1, maximumValue);
+  const b = makeRandom(1, maximumValue);
+  const operator = operatorSign[makeRandom(0, operatorSign.length - 1)];
+  const question = `${a} ${operator} ${b}`;
+  const answer = calculate(operator, a, b);
   return [question, answer];
 };
 

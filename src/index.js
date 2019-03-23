@@ -4,13 +4,13 @@ const maxGameIteration = 3;
 
 const game = (description, makeGameData) => {
   console.log('\nWelcome to the Brain Games!');
-  console.log(`${description} \n`);
+  console.log(`${description}\n`);
 
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
 
-  for (let counter = 0; counter <= maxGameIteration; counter += 1) {
-    if (counter === maxGameIteration) {
+  for (let i = 0; i <= maxGameIteration; i += 1) {
+    if (i === maxGameIteration) {
       console.log(`Congratulations, ${playerName}!\n`);
       return;
     }

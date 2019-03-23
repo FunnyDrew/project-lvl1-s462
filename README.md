@@ -1,3 +1,10 @@
+# Brain Games - studing project from Hexlet
+[Это ссылка на Хекслет](https://hexlet.io)
+
+It's a game project with simple arithmetics games,
+which can help you to take a lite fit for your brain.
+Project relised usign native JS.
+
 <a href="https://codeclimate.com/github/FunnyDrew/project-lvl1-s462/maintainability"><img src="https://api.codeclimate.com/v1/badges/f87db514e3f199c3ef47/maintainability" /></a>
 
 <a href="https://travis-ci.org/FunnyDrew/project-lvl1-s462.svg?branch=master"><img

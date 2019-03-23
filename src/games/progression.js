@@ -1,4 +1,4 @@
-import { randomCalc } from '../utils';
+import { makeRandom } from '../utils';
 import game from '..';
 
 const gameDescription = 'What number is missing in the progression?';
@@ -8,9 +8,9 @@ const maxFirstElement = 20;
 const maxStep = 30;
 
 const makeGameData = () => {
-  const firstElement = randomCalc(1, maxFirstElement);
-  const step = randomCalc(1, maxStep);
-  const hidenElementIndex = randomCalc(1, progressionLength);
+  const firstElement = makeRandom(1, maxFirstElement);
+  const step = makeRandom(1, maxStep);
+  const hidenElementIndex = makeRandom(1, progressionLength);
   let question = '';
   let answer;
 

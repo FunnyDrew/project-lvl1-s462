@@ -1,13 +1,11 @@
-import { randomCalc, isEven } from '../utils';
+import { makeRandom, isEven } from '../utils';
 import game from '..';
 
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 
-const getCorrectAnswer = number => (isEven(Number(number)) ? 'yes' : 'no');
-
 const makeGameData = () => {
-  const question = randomCalc(1, 1000);
-  const answer = getCorrectAnswer(question);
+  const question = makeRandom(1, 1000);
+  const answer = isEven(Number(question)) ? 'yes' : 'no';
   return [question, answer];
 };
 
