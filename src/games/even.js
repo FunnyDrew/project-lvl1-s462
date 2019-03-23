@@ -1,7 +1,7 @@
 import { randomCalc, isEven } from '../utils';
 import game from '..';
 
-const gameDescription = 'Answer "yes" if number even otherwise answer "no".\n';
+const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 
 const getCorrectAnswer = number => (isEven(Number(number)) ? 'yes' : 'no');
 

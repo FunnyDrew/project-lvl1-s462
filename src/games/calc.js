@@ -1,7 +1,7 @@
 import { randomCalc } from '../utils';
 import game from '..';
 
-const gameDescription = 'What is the result of the expression?\n';
+const gameDescription = 'What is the result of the expression?';
 
 const maximumValue = 40;
 const operators = ['+', '-', '*'];

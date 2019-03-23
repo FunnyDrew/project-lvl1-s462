@@ -19,5 +19,11 @@ start-prime:
 publish:
 	npm publish
 
+install-game: 
+	sudo npm install -g fd-games-new
+
+rec-cmd:
+	asciinema rec
+
 lint:
 	npx eslint .

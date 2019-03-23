@@ -1,7 +1,7 @@
 import { randomCalc } from '../utils';
 import game from '..';
 
-const gameDescription = 'What number is missing in the progression?\n';
+const gameDescription = 'What number is missing in the progression?';
 
 const progressionLength = 10;
 const maxFirstElement = 20;

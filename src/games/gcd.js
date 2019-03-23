@@ -1,7 +1,7 @@
 import { randomCalc } from '../utils';
 import game from '..';
 
-const gameDescription = 'Find the greatest common divisor of given numbers.\n';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const maximumValue = 50;
 

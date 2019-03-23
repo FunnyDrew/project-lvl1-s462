@@ -4,7 +4,7 @@ const maxGameIteration = 3;
 
 const game = (description, makeGameData) => {
   console.log('\nWelcome to the Brain Games!');
-  console.log(description);
+  console.log(`${description} \n`);
 
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
