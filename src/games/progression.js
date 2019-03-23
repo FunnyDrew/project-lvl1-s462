@@ -8,14 +8,14 @@ const maxFirstElement = 20;
 const maxStep = 30;
 
 const makeGameData = () => {
-  let element = randomCalc(1, maxFirstElement);
+  const firstElement = randomCalc(1, maxFirstElement);
   const step = randomCalc(1, maxStep);
   const hidenElementIndex = randomCalc(1, progressionLength);
   let question = '';
   let answer;
 
   for (let i = 1; i <= progressionLength; i += 1) {
-    element += step;
+    const element = firstElement + (i - 1) * step;
     let printElement = String(element);
 
     if (i === hidenElementIndex) {

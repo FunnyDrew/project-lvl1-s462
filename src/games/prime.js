@@ -7,6 +7,9 @@ const minimumValue = 1;
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
 const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
   if (number === 2) {
     return true;
   }
@@ -27,7 +30,7 @@ const isPrime = (number) => {
 
 const makeGameData = () => {
   const question = randomCalc(minimumValue, maximumValue);
-  const answer = (isPrime(question) ? 'yes' : 'no');
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   return [question, answer];
 };

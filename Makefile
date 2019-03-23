@@ -1,5 +1,5 @@
 install:
-	npm-install
+	npm install
 
 start-calc:
 	npx babel-node 'src/bin/brain-calc.js'

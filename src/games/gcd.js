@@ -5,7 +5,7 @@ const gameDescription = 'Find the greatest common divisor of given numbers.\n';
 
 const maximumValue = 50;
 
-const gcdCalculation = (number1, number2) => {
+const getGcd = (number1, number2) => {
   let num1 = number1;
   let num2 = number2;
   while (num1 !== 0 && num2 !== 0) {
@@ -21,7 +21,7 @@ const makeGameData = () => {
   const gameNumber1 = randomCalc(1, maximumValue);
   const gameNumber2 = randomCalc(1, maximumValue);
   const question = `${gameNumber1} ${gameNumber2}`;
-  const answer = gcdCalculation(gameNumber1, gameNumber2);
+  const answer = getGcd(gameNumber1, gameNumber2);
   return [question, answer];
 };
 
