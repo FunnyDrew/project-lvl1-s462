@@ -14,12 +14,10 @@ const game = (description, makeGameData) => {
   const playerName = queryToPlayer('May I have your name?');
   console.log(`Hello, ${playerName}!\n`);
 
-  let counter = 0;
-
-  while (counter <= maxGameIteration) {
+  for (let counter = 0; counter <= maxGameIteration; counter += 1) {
     if (counter === maxGameIteration) {
       console.log(`Congratulations, ${playerName}!\n`);
-      return;
+      break;
     }
 
     const getGameData = makeGameData();
@@ -34,8 +32,7 @@ const game = (description, makeGameData) => {
     [question, correctAnswer] = makeGameData();
 
     console.log(`Question: ${question}`);
-    const playerResponse = queryToPlayer('Your answer: ');
-    */
+    const playerResponse = queryToPlayer('Your answer: '); */
 
     /* Работает так, но чем это лучше?
     let question = '';
@@ -48,10 +45,9 @@ const game = (description, makeGameData) => {
     if (playerResponse !== String(correctAnswer)) {
       console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!\n`);
-      return;
+      break;
     }
     console.log('Correct!');
-    counter += 1;
   }
 };
 
