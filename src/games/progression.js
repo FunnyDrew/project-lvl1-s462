@@ -10,19 +10,18 @@ const maxStep = 20;
 const makeGameData = () => {
   const firstElement = makeRandom(1, maxFirstElement);
   const step = makeRandom(1, maxStep);
-  const hidenElementIndex = makeRandom(1, progressionLength);
-  const elements = new Array(10);
+  const hidenElementIndex = makeRandom(0, progressionLength - 1);
+  const progression = new Array(progressionLength);
 
-  for (let i = 0; i <= progressionLength; i += 1) {
-    if (i === hidenElementIndex) {
-      elements[i - 1] = '..';
-    } else elements[i - 1] = String(firstElement + i * step);
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression[i] = String(firstElement + i * step);
   }
+  progression[hidenElementIndex] = '..';
 
-  const question = elements.join(' ');
+  const question = progression.join(' ');
   const answer = firstElement + hidenElementIndex * step;
 
-  return [question, answer];
+  return [question, String(answer)];
 };
 
 export default () => game(gameDescription, makeGameData);

@@ -25,7 +25,7 @@ const makeGameData = () => {
   const operator = operatorSign[makeRandom(0, operatorSign.length - 1)];
   const question = `${a} ${operator} ${b}`;
   const answer = calculate(operator, a, b);
-  return [question, answer];
+  return [question, String(answer)];
 };
 
 export default () => game(gameDescription, makeGameData);

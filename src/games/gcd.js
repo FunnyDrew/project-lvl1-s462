@@ -21,7 +21,7 @@ const makeGameData = () => {
   const gameNumber2 = makeRandom(1, maximumValue);
   const question = `${gameNumber1} ${gameNumber2}`;
   const answer = getGcd(gameNumber1, gameNumber2);
-  return [question, answer];
+  return [question, String(answer)];
 };
 
 export default () => game(gameDescription, makeGameData);

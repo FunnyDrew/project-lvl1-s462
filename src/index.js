@@ -20,7 +20,7 @@ const game = (description, makeGameData) => {
     console.log(`Question: ${question}`);
     const playerResponse = readlineSync.question('Your answer: ');
 
-    if (playerResponse !== String(correctAnswer)) {
+    if (playerResponse !== correctAnswer) {
       console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!\n`);
       return;
