@@ -1,4 +1,4 @@
-import { makeRandom } from '../utils';
+import makeRandom from '../utils';
 import isNumberPrime from 'is-number-prime';
 import game from '..';
 

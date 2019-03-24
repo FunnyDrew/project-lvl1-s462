@@ -1,4 +1,4 @@
-import { makeRandom } from '../utils';
+import makeRandom from '../utils';
 import game from '..';
 
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
