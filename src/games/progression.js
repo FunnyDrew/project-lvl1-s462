@@ -5,26 +5,23 @@ const gameDescription = 'What number is missing in the progression?';
 
 const progressionLength = 10;
 const maxFirstElement = 20;
-const maxStep = 30;
+const maxStep = 2;
 
 const makeGameData = () => {
   const firstElement = makeRandom(1, maxFirstElement);
   const step = makeRandom(1, maxStep);
   const hidenElementIndex = makeRandom(1, progressionLength);
-  let question = '';
-  let answer;
+  const arr = new Array(10);
 
-  for (let i = 1; i <= progressionLength; i += 1) {
-    const element = firstElement + (i - 1) * step;
-    let printElement = String(element);
-
+  for (let i = 0; i <= progressionLength; i += 1) {
     if (i === hidenElementIndex) {
-      printElement = '..';
-      answer = element;
-    }
-
-    question = `${question} ${printElement}`;
+      arr[i - 1] = '..';
+    } else arr[i - 1] = String(firstElement + i * step);
   }
+
+  const question = arr.join(' ');
+  const answer = firstElement + hidenElementIndex * step;
+
   return [question, answer];
 };
 

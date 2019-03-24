@@ -16,7 +16,6 @@ const getGcd = (number1, number2) => {
   return num1 + num2;
 };
 
-
 const makeGameData = () => {
   const gameNumber1 = makeRandom(1, maximumValue);
   const gameNumber2 = makeRandom(1, maximumValue);
