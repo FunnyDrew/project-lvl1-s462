@@ -19,9 +19,9 @@ const makeGameData = () => {
   progression[hidenElementIndex] = '..';
 
   const question = progression.join(' ');
-  const answer = firstElement + hidenElementIndex * step;
+  const answer = String(firstElement + hidenElementIndex * step);
 
-  return [question, String(answer)];
+  return [question, answer];
 };
 
 export default () => game(gameDescription, makeGameData);
